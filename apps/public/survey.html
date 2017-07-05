@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+	<title>Suevey Questions</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+       <h1>Survey Questions </h1>
+    </div>
+    <h2>About You</h2>
+  	
+      <label for="name"><h4>Name</h4></label>
+  	    <input type="text" class="form-control" id ="name">
+      
+  	  <label for="image"><h4>Link to Photo Image (Required)</h4></label>
+  	    <input type="url" class="form-control" id ="image">
+     <hr>
+
+     <h3>Ouestion 1</h3>
+     <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+     <select class="form-control" style ="width:150px" id = '1'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 2</h3>
+     <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+     <select class="form-control" style ="width:150px" id ='2'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 3</h3>
+     <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+     <select class="form-control" style ="width:150px" id = '3'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 4</h3>
+     <h4>You rarely do something just out of sheer curiosity.</h4>
+     <select class="form-control" style ="width:150px" id = '4'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 5</h3>
+     <h4>People can rarely upset you.</h4>
+     <select class="form-control" style ="width:150px" id = '5'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 6</h3>
+     <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+     <select class="form-control" style ="width:150px" id = '6'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 7</h3>
+     <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+     <select class="form-control" style ="width:150px" id = '7'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 8</h3>
+     <h4>You rarely get carried away by fantasies and ideas.</h4>
+     <select class="form-control" style ="width:150px" id = '8'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 9</h3>
+     <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+     <select class="form-control" style ="width:150px" id = '9'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+
+    <h3>Ouestion 10</h3>
+     <h4>You feel more energetic after spending time with a group of people.</h4>
+     <select class="form-control" style ="width:150px" id = '10'>
+        <option>Select an option(1=Disagree, 5=agree)</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-lg btn-primary submit">Submit</button>
+    <div class="results-container"></div>
+  </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+$(".submit").on("click",function(){
+   var newSurvey = {
+   	name: $('#name').val().trim(),
+   	image: $('#image').val().trim(),
+   	scores: [$('#1 :selected').val(),
+   	         $('#2 :selected').val(),
+   	         $('#3 :selected').val(),
+   	         $('#4 :selected').val(),
+   	         $('#5 :selected').val(),
+   	         $('#6 :selected').val(),
+   	         $('#7 :selected').val(),
+   	         $('#8 :selected').val(),
+   	         $('#9 :selected').val(),
+   	         $('#10 :selected').val()
+           ]
+   };
+	console.log(newSurvey);
+	var currentURL = window.location.origin;
+	$.post(currentURL + "/api/friends", newSurvey, function(data){
+        
+			alert("you found a friend");
+        
+        
+		
+	});
+   
+    var friendsDiv = $('<div class = "friendsDiv" style ="width:500px height:500px" >');
+    friendsDiv.append(newSurvey);
+    $('.results-container').append(newSurvey);
+	return false;
+});
+</script>
